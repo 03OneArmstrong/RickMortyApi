@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import MostrarPersonaje from './MostrarPersonaje'
 import Navbar from './Navbar'
 import Buscador from './Buscador'
+import Footer from './Footer'
 
 function ConsumoApi() {
 
@@ -31,11 +32,15 @@ function ConsumoApi() {
     }, [])
 
     return (
-        <>
-            <Navbar />
-            <Buscador busqueda={busqueda} setBusqueda={setBusqueda} />
-            <MostrarPersonaje personajes={filtro} />
-        </>
+        <div className='min-h-screen flex flex-col'>
+                <Navbar />
+            <main className='flex-grow'>
+                <Buscador busqueda={busqueda} setBusqueda={setBusqueda} />
+                <MostrarPersonaje personajes={filtro} />
+            </main>
+                <Footer />
+
+        </div>
     )
 }
 

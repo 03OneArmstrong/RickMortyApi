@@ -1,7 +1,7 @@
 import React from 'react'
 import { XCircleIcon } from '@heroicons/react/16/solid'
 
-function Modal({ isOpen, setIsOpen, personaje, setSeleccionado, setDetener }) {
+function Modal({ isOpen, setIsOpen, personaje, setSeleccionado }) {
     return (
         <>
             {isOpen && personaje && (
@@ -18,7 +18,7 @@ function Modal({ isOpen, setIsOpen, personaje, setSeleccionado, setDetener }) {
                             onClick={() => {
                                 setIsOpen(false)
                                 setSeleccionado(null)
-                                setDetener(false)
+                                
                             }
                             }
                             className='absolute top-4 right-4'>

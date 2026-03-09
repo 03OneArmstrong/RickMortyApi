@@ -13,7 +13,7 @@ function MostrarPersonaje({ personajes }) {
     const [isOpen, setIsOpen] = useState(false)
     const [personaje, setPersonaje] = useState(null)
     const [seleccionado, setSeleccionado] = useState(null)
-    const [detener, setDetener] = useState(false)
+    
 
     return (
         <>
@@ -28,7 +28,7 @@ function MostrarPersonaje({ personajes }) {
                     slidesPerView={4}
                     pagination={{ clickable: true }}
                     navigation
-                    autoplay={detener
+                    autoplay={isOpen
                         ? false
                         : {
                             delay: 1500,
@@ -55,7 +55,7 @@ function MostrarPersonaje({ personajes }) {
                                         setPersonaje(obj)
                                         setIsOpen(true)
                                         setSeleccionado(obj.id)
-                                        setDetener(true)
+                                        
                                     }}
                                     className="mt-3 bg-[#2d6a4f] rounded-lg p-2 text-white hover:bg-[#90be6d] hover:text-black duration-300 shadow-lg"
                                 >{obj.name}</button>
@@ -82,7 +82,7 @@ function MostrarPersonaje({ personajes }) {
                 setIsOpen={setIsOpen}
                 personaje={personaje}
                 setSeleccionado={setSeleccionado}
-                setDetener={setDetener}
+                
             />
         </>
     )
